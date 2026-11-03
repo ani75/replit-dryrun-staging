@@ -1,0 +1,56 @@
+/* Appendix (Tab 3) layout fixes. Scoped to #tab3 except the mobile top-nav rule.
+   Content and overall design unchanged; spacing, alignment, contrast and responsive fixes only. */
+
+/* 1. Readable accent words on light slides. The pastel gradient (#C3F2D0 → #FEE3CC) is
+      ~1.2:1 against the cream background; use deeper hues from the same family (≥4.3:1). */
+#tab3 .slide:not(.cover):not(.close-slide) h2 .grad {
+  background: linear-gradient(135deg, #1f8a4c 0%, #1a7fa8 55%, #b4622a 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* 2. One vertical rhythm for every slide: heading → lead → content → caption. */
+#tab3 .slide h2 { margin-bottom: 24px; }
+#tab3 .slide-inner > .lead:not(:last-child) { margin-bottom: 24px; }
+#tab3 .slide-inner > table + .lead,
+#tab3 .slide-inner > table + .sub,
+#tab3 .slide-inner > .twocol + .lead,
+#tab3 .slide-inner > .threecol + .lead { margin-top: 18px; margin-bottom: 0; }
+#tab3 .close-slide h1 { margin-bottom: 24px; }
+
+/* 3. Cards: even inner padding, lists styled like card body text, bullets inside the padding. */
+#tab3 .card { padding: 20px 22px; }
+#tab3 .card h3 { margin-bottom: 8px; line-height: 1.35; }
+#tab3 .card ul { margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.55; color: var(--text-subtle); }
+#tab3 .card li + li { margin-top: 4px; }
+#tab3 .card .schema-badge { margin-bottom: 8px; }
+
+/* 4. Cover meta: priority pill sits on the same baseline row as Current rank / Prepared. */
+#tab3 .cover-meta { align-items: flex-end; row-gap: 16px; }
+#tab3 .cover-meta .priority-pill { margin-top: 0; }
+
+/* 5. No single-word last lines. */
+#tab3 h1, #tab3 h2, #tab3 h3 { text-wrap: balance; }
+#tab3 p, #tab3 li, #tab3 td, #tab3 .lead, #tab3 .sub { text-wrap: pretty; }
+
+/* 6. Slide numbers readable on both backgrounds. */
+#tab3 .slide-num { color: #a39b93; top: 24px; bottom: auto; }
+#tab3 .close-slide .slide-num { top: 72px; }  /* clear the cream curve at the top of the close slide */
+#tab3 .cover .slide-num, #tab3 .close-slide .slide-num { color: #8a8a8a; }
+
+/* 7. Mobile. */
+@media (max-width: 760px) {
+  .topnav { padding: 0 12px; gap: 6px; }
+  .topnav .nav-divider { display: none; }
+  .topnav a.tab-link { font-size: 12px; padding: 4px 6px; white-space: nowrap; }
+  #tab3 .dots { display: none; }
+  #tab3 .slide { padding: 48px 20px 120px; }
+  #tab3 .slide-num { top: 16px; right: 20px; }
+  #tab3 .close-slide .slide-num { top: 64px; }
+  #tab3 .data-table { font-size: 10.5px; table-layout: auto; }
+  #tab3 .data-table th { font-size: 8.5px; letter-spacing: 0.03em; padding: 8px 4px; }
+  #tab3 .data-table td { padding: 8px 4px; overflow-wrap: normal; word-break: normal; }
+  #tab3 .data-table td:nth-child(2) { white-space: nowrap; }
+  #tab3 .data-table th:first-child, #tab3 .data-table td:first-child { padding-left: 8px; }
+  #tab3 .data-table th:last-child, #tab3 .data-table td:last-child { padding-right: 8px; }
+  #tab3 .cover-meta { gap: 16px 24px; }
+}

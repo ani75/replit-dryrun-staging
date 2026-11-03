@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{if(sessionStorage.getItem('dd-replit-unlock')!=='1')document.documentElement.classList.add('dd-locked')}catch(e){document.documentElement.classList.add('dd-locked')}</script><style>html.dd-locked body>:not(#dd-gate){display:none!important}#dd-gate{display:none}html.dd-locked #dd-gate{display:flex}html.dd-locked{background:#FFF9F4}#dd-gate{position:fixed;inset:0;z-index:2147483647;background:#FFF9F4;align-items:center;justify-content:center;padding:24px;font-family:'Raleway',-apple-system,sans-serif}#dd-gate .dd-card{background:#fff;border:1px solid #E8E2DC;border-radius:16px;max-width:380px;width:100%;text-align:center;overflow:hidden}#dd-gate .dd-bar{height:6px;background:linear-gradient(90deg,#C3F2D0 0%,#B3EAFF 53%,#FEE3CC 100%)}#dd-gate .dd-in{padding:38px 32px 32px}#dd-gate h2{margin:0 0 6px;font-size:20px;color:#232323}#dd-gate p{margin:0 0 20px;font-size:13px;color:#6B6B6B}#dd-gate input{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E8E2DC;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px}#dd-gate input:focus{outline:none;border-color:#232323}#dd-gate button{width:100%;padding:12px 14px;background:#232323;color:#FFFFFB;border:none;border-radius:10px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer}#dd-gate button:hover{opacity:.85}#dd-gate .dd-err{font-size:12px;color:#B83A2A;margin:10px 0 0;min-height:15px}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding Governance Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daydream-tokens.css">
+<link rel="stylesheet" href="bundle-shell.css">
+<link rel="stylesheet" href="tab-draft-styles.css">
+<link rel="stylesheet" href="tab-mockup-styles.css">
+<link rel="stylesheet" href="appendix-fixes.css">
+<style>.art-table{width:100%;margin:12px 0;font-size:12.5px}.new-block ul,.new-block ol{font-size:13px;line-height:1.6;color:#1f4d33;padding-left:20px;margin:6px 0}.new-block h4{font-size:13px;margin:12px 0 4px;color:#1a5c2a}#tab2 .blog-cols article table{border-collapse:collapse;width:100%;font-size:14px;margin:16px 0}#tab2 .blog-cols article td,#tab2 .blog-cols article th{border:1px solid #ddd;padding:8px;text-align:left}.viz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0}.viz-grid.viz-one{grid-template-columns:minmax(0,1fr)}.viz{margin:0}.viz img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid #e6e3dc;background:#F4F3EF}.cta-row{margin:18px 0}.cta-btn{display:inline-block;background:#111;color:#fff!important;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px}.viz figcaption{font-size:12px;color:#666;margin-top:6px;line-height:1.4}@media (max-width:640px){.viz-grid{grid-template-columns:minmax(0,1fr)}}@media (max-width:760px){#tab2 .blog-cols{grid-template-columns:minmax(0,1fr)!important;padding:24px 16px}#tab2 section{padding-left:16px!important;padding-right:16px!important}#tab2 .two-col{grid-template-columns:minmax(0,1fr)!important}#tab2 .blog-body{min-width:0}#tab2 .blog-cols article table,#tab2 .blog-body table{display:block;overflow-x:auto}#tab2 nav .nav-links{display:none}#tab2 .three-col{grid-template-columns:minmax(0,1fr)!important}#tab2 nav{padding:12px 16px!important;gap:8px}#tab2 .page *{min-width:0}#tab2 .two-col{padding:16px!important}#tab2 .overline{overflow-wrap:anywhere}#tab2 .placeholder{width:auto!important}#tab2 h1{font-size:30px!important}.topnav{overflow-x:auto}}</style>
+<style>.cs-row{font-size:13px;background:#F6F5F1;border:1px solid #e3ded6;border-radius:10px;padding:12px 16px;margin:0 0 20px}.tbl-scroll{overflow-x:auto;max-width:100%}.art-table td,.art-table th{vertical-align:top}.rb{max-width:760px;margin:0 auto;padding:40px 16px 56px;font-size:17px;line-height:1.7;color:#111}.rb-crumb{font-size:13px;color:#6b6b6b;margin-bottom:12px}.rb h1{font-size:40px;line-height:1.15;letter-spacing:-0.02em;margin:0 0 16px;text-align:left}.rb-meta{font-size:13px;color:#6b6b6b;display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:24px}.rb-meta b{color:#111;font-weight:600}.rb-cover{min-height:260px;border-radius:12px;margin-bottom:32px}.rb h2{font-size:28px;line-height:1.25;margin:44px 0 12px}.rb h3{font-size:20px;margin:28px 0 8px}.rb table{border-collapse:collapse;width:100%;font-size:14px;margin:16px 0;line-height:1.5}.rb td,.rb th{border:1px solid #ddd;padding:8px;text-align:left}.rb th{background:#f3f1ec}#tab2 .rb table th{background:#1c1b19;color:#fff;font-size:14px;font-weight:700;text-transform:none;letter-spacing:0;padding:10px 8px;border-color:#1c1b19}#tab2 .rb table td{background:#fff;color:#111}#tab2 .rb table tr:nth-child(even) td{background:#faf8f4}#tab2 .rb-faq{border-bottom:1px solid #e5e5e5}#tab2 .rb-faq:first-of-type{border-top:1px solid #e5e5e5}#tab2 .rb-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;font-weight:600;color:#111}#tab2 .rb-faq summary::-webkit-details-marker{display:none}#tab2 .rb-faq summary::after{content:"+";font-size:22px;font-weight:400;line-height:1;color:#555;flex:none}#tab2 .rb-faq[open] summary::after{content:"\2212"}#tab2 .rb-faq p{margin:0 0 18px;font-size:15px;line-height:1.7;color:#333}.rb a{color:#0053D6}.rb-follow{margin:40px 0 24px;font-size:15px;color:#444}.rb-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}@media (max-width:760px){.rb{padding:24px 16px 40px;font-size:16px}.rb h1{font-size:30px}.rb h2{font-size:24px}.rb-more{grid-template-columns:minmax(0,1fr)}.rb table{font-size:13px}}</style>
+</head>
+<body><div id="dd-gate"><div class="dd-card"><div class="dd-bar"></div><div class="dd-in"><h2>Replit &middot; daydream</h2><p>Enter the passcode to view this page.</p><form id="dd-gate-form"><input id="dd-gate-in" type="password" placeholder="Passcode" autocomplete="off"><button type="submit">Open</button><div class="dd-err" id="dd-gate-err"></div></form></div></div></div><script>(function(){var P='daydream-replit-2026';var g=document.getElementById('dd-gate');if(!document.documentElement.classList.contains('dd-locked')){if(g&&g.parentNode)g.parentNode.removeChild(g);return}var f=document.getElementById('dd-gate-form'),i=document.getElementById('dd-gate-in'),e=document.getElementById('dd-gate-err');try{i.focus()}catch(x){}f.addEventListener('submit',function(ev){ev.preventDefault();if((i.value||'').trim().toLowerCase()===P){try{sessionStorage.setItem('dd-replit-unlock','1')}catch(x){}document.documentElement.classList.remove('dd-locked');if(g&&g.parentNode)g.parentNode.removeChild(g)}else{e.textContent='Incorrect passcode.';i.value='';i.focus()}})})()</script>
+
+<nav class="topnav">
+  <div class="topnav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+      <rect width="32" height="32" rx="8" fill="url(#ng)"/>
+      <path d="M9 22L16 10L23 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#C3F2D0"/><stop offset="53%" stop-color="#B3EAFF"/><stop offset="100%" stop-color="#FEE3CC"/></linearGradient></defs>
+    </svg>
+  </div>
+  <div class="nav-divider"></div>
+  <a href="#" class="tab-link active" onclick="switchTab('tab1',this);return false;"><span class="tab-num">1</span> Content Draft</a>
+  <a href="#" class="tab-link" onclick="switchTab('tab2',this);return false;"><span class="tab-num">2</span> Mockup</a>
+  <a href="#" class="tab-link" onclick="switchTab('tab3',this);return false;"><span class="tab-num">3</span> Appendix</a>
+</nav>
+
+<div id="tab1" class="tab-panel active">
+<!-- TAB1_START -->
+<div class="draft-header"><div class="draft-header-inner">
+<div class="eyebrow">SEO Content Strategy &middot; New Page Draft</div>
+<h1>Replit /blog/governing-vibe-coding: New Page Draft</h1>
+<p class="sub">Primary keyword: <strong style="color:#e8e8e8;">vibe coding governance</strong> &nbsp;&middot;&nbsp; Prepared November 2, 2026</p>
+<div class="grad-bar"></div>
+<div class="legend"><span>Legend</span><span class="leg-pill leg-new">New</span><span class="leg-pill leg-unch">Template (verbatim)</span></div>
+</div></div>
+<div class="draft-wrap">
+<table class="meta-table">
+<tr><td>Proposed URL</td><td>https://replit.com/blog/governing-vibe-coding</td></tr>
+<tr><td>Primary Keyword</td><td>vibe coding governance</td></tr>
+<tr><td>Supporting Keywords</td><td>enterprise vibe coding &middot; governing vibe coding &middot; vibe coding security &middot; vibe coding at scale &middot; citizen developer governance &middot; shadow AI</td></tr>
+<tr><td>Template</td><td>Replit blog post (like <a href="https://replit.com/blog/new-enterprise-governance-tools">https://replit.com/blog/new-enterprise-governance-tools</a>)</td></tr>
+<tr><td>Proposed Title Tag</td><td>Vibe Coding Governance Guide for Enterprise Teams | Replit</td></tr>
+<tr><td>Proposed Meta Description</td><td>A practical model for vibe coding governance: risk tiers, control layers, pre-publish security checks, a RACI and a 30/60/90-day rollout.</td></tr>
+<tr><td>Clearscope Optimization</td><td>Score: A++ &middot; Clearscope draft: <a href="https://www.clearscope.io/daydream/drafts/1e9bf1112d4b4851/editor?p=11abee58" target="_blank" rel="noopener">Open in Clearscope</a> &middot; 34 of 40 terms in range</td></tr>
+<tr><td>Summary</td><td>A long-form Replit blog guide for IT, security and platform leaders whose non-engineering teams already build apps with AI. It sets out an operating model: three risk tiers, six control layers, a duplicate-app process, a nine-point pre-publish checklist, a RACI and a 30/60/90-day rollout. It closes with a table that maps Replit Enterprise features to each control layer and a six-question FAQ.</td></tr>
+</table>
+<div class="section-label">Page Content</div>
+<div class="change-block" id="block-h1">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> H1</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>Governing vibe coding at scale: an enterprise guide</h3>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Leads with &quot;Governing vibe coding at scale,&quot; the phrasing used in the top enterprise prompts on this topic, then states the format. It follows the short, sentence-case H1 style of Replit blog posts such as &quot;Govern Replit at scale.&quot; <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-intro">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> Introduction</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<p>Vibe coding governance is the set of policies and platform controls that let employees <a href="https://replit.com/blog/what-is-vibe-coding">build apps with AI</a> while IT keeps visibility and control.</p>
+<p>Most builders sit outside engineering, in operations, finance, HR and product management. They describe what they want in natural language, and code review never sees their work.</p>
+<p>Banning vibe coding doesn't stop it. It pushes it onto personal accounts and unapproved tools, which is shadow IT with an AI engine attached. IBM's <a href="https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91">Cost of a Data Breach Report 2025</a> found that 20% of organizations studied had a breach involving shadow AI, and high levels of shadow AI added an average of $670,000 per breach.</p>
+<p>The workable answer for enterprise vibe coding is a sanctioned platform with the guardrails built in. This guide covers what to govern, how to tier risk, which controls to enforce, who owns what and how to roll it out in 90 days.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Opens with a one-sentence definition of vibe coding governance that an answer engine can quote on its own, linked to Replit&#x27;s explainer on vibe coding. It then sets the problem in four short paragraphs: builders sit outside engineering, a ban pushes their work into shadow AI, and a sanctioned platform is the answer. The IBM figures come from the primary report. <strong>Sources:</strong> N1, N2</p>
+</div>
+<div class="change-block" id="block-what-vibe-coding-governance-actually-means">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> What vibe coding governance actually means</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>What vibe coding governance actually means</h3>
+<p>Governing vibe coding means setting rules for apps that people build by describing them to an AI, where the person who builds the app may never read the code behind it. The rules have to work without that person's review, so they belong in the platform the apps are built and published on.</p>
+<h4>How it differs from governing AI coding assistants</h4>
+<p>Engineers who use AI coding assistants still read diffs, run tests and send changes through code review. That is AI-assisted development, and your existing software development lifecycle mostly covers it. The engineer stays accountable for every line.</p>
+<p>Vibe coding removes that reviewer. An operations analyst who builds a vendor-tracking app judges it by whether it works. How it's built is invisible to them. The AI-generated code can be correct and still ship with a hardcoded key or an open endpoint. Policies that assume someone will read the code don't apply, so citizen developer governance for vibe coding has to live in the platform.</p>
+<h4>Sanctioned platform, unsanctioned app</h4>
+<p>Approving a platform doesn't approve every app built on it. The Cloud Security Alliance's research note <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">The Vibe Coding Governance Gap</a> puts it plainly: "The platform is sanctioned; the application is not." The risk now lives inside approved tools, in apps that nobody in IT has seen.</p>
+<p><strong>Put it into practice:</strong> write one sentence that defines a governed app in your organization, such as "any app built with AI that runs on company data or is shared with more than one person." Every policy in the rest of this guide hangs off that definition.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Separates this topic from governing AI coding assistants, because the builder may never read the code. The &quot;sanctioned platform, unsanctioned app&quot; framing is quoted from the Cloud Security Alliance note that ranks first for the primary keyword, and the H2 avoids repeating the H1. <strong>Sources:</strong> O1</p>
+</div>
+<div class="change-block" id="block-where-vibe-coding-breaks-down-at-scale">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> Where vibe coding breaks down at scale</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>Where vibe coding breaks down at scale</h3>
+<p>Vibe coding breaks down at scale when apps multiply faster than anyone can track them, go live without review and outlive the people who built them. These six governance risks show up in almost every enterprise vibe coding program.</p>
+<h4>Shadow apps and no inventory</h4>
+<p>You can't secure an app you don't know exists. Without a registry, a security team can't answer basic questions: how many apps are live, who built them and what data they read. Incident response starts with a hunt for the app.</p>
+<h4>Duplicate apps and sprawl</h4>
+<p>When building takes an afternoon, teams rebuild before they look for what exists. Two product management teams build two feature-request trackers, three regions end up with three expense trackers, each with its own logic and its own copy of the data. Every one-off adds snowflake complexity and future technical debt management work.</p>
+<h4>Unreviewed publishing</h4>
+<p>A vibe-coded app can go from prompt to public URL in minutes, and its security vulnerabilities go live with it. The common gaps are predictable: API keys in client code, missing sign-in, database tables without row-level security, and open preview links. GitGuardian's <a href="https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026/">State of Secrets Sprawl 2026</a> counted 28.65 million new hardcoded secrets in public GitHub commits in 2025, a 34% increase over the year before. The CSA note also reports that Georgia Tech's <a href="https://news.research.gatech.edu/2026/04/13/bad-vibes-ai-generated-code-vulnerable-researchers-warn">Vibe Security Radar</a> tracked 6 CVEs attributed to AI-generated code in January 2026, 15 in February and 35 in March.</p>
+<h4>Sensitive data in prompts and connectors</h4>
+<p>Builders paste customer records into prompts and connect apps to CRMs, warehouses and inboxes. Each connection is a new data flow that your data protection team never mapped. Generative AI also makes it easy to send that data to an outside model without anyone noticing.</p>
+<h4>Orphaned apps with no owner</h4>
+<p>The builder changes roles or leaves. The app keeps running, keeps its access and keeps processing data. Nobody patches its dependencies, and nobody knows whether anyone still uses it.</p>
+<h4>Compliance blind spots</h4>
+<p>GDPR and HIPAA obligations follow the data an app handles. How the app was built doesn't change them. A vibe-coded app that touches health records carries the same HIPAA exposure as one built by engineers. The EU AI Act adds rules for high-risk AI systems. Under the <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act">current EU timeline</a>, the Annex III high-risk rules apply from December 2, 2027, after the Digital Omnibus on AI moved the original August 2, 2026 date. An app that screens job candidates or scores credit could fall into that category.</p>
+<p><strong>Put it into practice:</strong> score your organization against these six points today. Each one you can't answer becomes a line item in the rollout plan below.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Names the six failure points that ranking pages raise one at a time, each under its own H3 so it can be cited alone. Figures link to their primary sources. The EU AI Act date reflects the Digital Omnibus on AI, which moved Annex III high-risk rules to December 2, 2027. <strong>Sources:</strong> N3, N4, N5, N6, N7</p>
+</div>
+<div class="change-block" id="block-a-tiered-governance-model">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> A tiered governance model</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>A tiered governance model</h3>
+<p>A tiered model matches the depth of review to the risk of the app, so a personal prototype moves fast while an app that touches regulated data gets a full security review. Three tiers cover most cases.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Tier</th><th>Examples</th><th>Required controls</th><th>Who reviews</th><th>Publish rule</th></tr><tr><td>Tier 1: Personal or prototype</td><td>A proof of concept (PoC), a personal calculator, a demo for one meeting</td><td>Company sign-in, private by default, automated scan, no production data</td><td>No one. The builder self-certifies</td><td>Private only. Register or delete within 30 days</td></tr><tr><td>Tier 2: Internal team tool, non-sensitive data</td><td>Internal tools like a team dashboard, a request intake form or a product management tracker</td><td>Tier 1 controls plus registry entry, named owner, role-based access, passing scan, Git-tracked changes</td><td>Platform admin checks the registry entry and scan result</td><td>Private deployment inside the company. Publishing blocked on failed scan</td></tr><tr><td>Tier 3: Regulated data, customer-facing or agentic</td><td>Apps that touch PII, health or payment data, apps for customers, apps that call AI APIs or act on external systems</td><td>Tier 2 controls plus security review, data protection review, input validation and output checks, logged connectors, approval workflows</td><td>IT/security and the data owner</td><td>Public only after sign-off. Re-review on major changes</td></tr></table></div>
+<p>Tiers keep enterprise vibe coding fast where risk is low. They should also be easy to assign. Ask three questions at intake: whose data does it touch, who will use it and can it take actions outside the app? The highest answer sets the tier.</p>
+<p><strong>Put it into practice:</strong> publish the tier table internally, add the three intake questions to your registry form and set Tier 1 as the default for every new app.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> No top-ranking page gives a tier table, though the CSA note recommends three tiers. The table makes the model scannable and quotable, and three intake questions make the tiers easy to assign. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-the-control-layers">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> The control layers</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>The control layers</h3>
+<p>Six control layers cover most vibe coding security risk: identity and access, environment isolation, pre-publish gates, data and secrets, visibility and audit, and lifecycle and ownership. Each layer should be enforced by the platform, so the builder doesn't have to remember it. Together they form the security controls an auditor will ask about.</p>
+<h4>Identity and access</h4>
+<p>Tie every builder and every app user to your identity provider. Require single sign-on, provision and remove users automatically, and map identity provider groups to roles. Use role-based access so a viewer can open an app without being able to edit or publish it. These access controls are the base that every other security control depends on.</p>
+<h4>Environment isolation</h4>
+<p>Keep development and production apart. Preview links should require company sign-in, production data shouldn't be reachable from a prototype, and each app should only see its own data. Isolation limits the blast radius when one app has a flaw. Replit, for example, runs each app in <a href="https://replit.com/blog/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack">its own cloud sandbox</a> with a separate frontend and backend.</p>
+<h4>Pre-publish gates</h4>
+<p>Publishing is the one moment every app passes through, so it's the right place for checks. Require an automated scan before any app goes live, block publishing when findings cross a severity threshold, and require changes to be pushed to a Git remote first. The gate runs the same way for every builder.</p>
+<h4>Data and secrets</h4>
+<p>Keep credentials out of code and out of prompts. Store keys in a secrets manager that injects them at runtime, scope each connector to the apps that need it and limit which AI models and providers teams can use. Treat prompt content as data that may hold personal information. On Replit, connectors such as the <a href="https://replit.com/blog/vibe-coding-data-apps-replit-databricks">Databricks integration</a> let apps query governed tables in place, without copying sensitive data into the app.</p>
+<h4>Visibility and audit</h4>
+<p>Log who built, changed, published and accessed each app, and stream those events to your SIEM. Audit trails turn an incident from guesswork into a timeline. Pair them with a usage view that shows every published app, its creator and whether it's public or private.</p>
+<h4>Lifecycle and ownership</h4>
+<p>Every app needs a named owner, a review date and a way to retire it. When an owner leaves, ownership moves to their team. Unused apps get unpublished on a schedule. After launch, rescan published apps when a new vulnerability affects their dependencies, and keep a fast way to unpublish an app and revoke its connectors during an incident. Move a team tool to engineering ownership once the business depends on it, for example when it handles customer or regulated data or a team can't work without it. Replit backs up every filesystem at least daily, which gives owners a recovery point if a change goes wrong. This layer is what keeps maintainability from falling apart over time.</p>
+<p><strong>Put it into practice:</strong> list the six layers in a table and mark each one as enforced by the platform, enforced by process or not covered. Close the "not covered" rows first.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Six vendor-neutral layers, each in its own H3, give IT leaders a checklist they can map to any platform. Three short Replit examples (sandboxes, the Databricks connector, daily backups) show a control in practice without repeating the Replit table, and the lifecycle layer now covers rescans, incident unpublishing and handoff to engineering. <strong>Sources:</strong> R27, R28, R29, R30, R31</p>
+</div>
+<div class="change-block" id="block-how-to-prevent-duplicate-apps">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> How to prevent duplicate apps</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>How to prevent duplicate apps</h3>
+<p>Prevent duplicate apps by making existing apps easy to find before anyone builds a new one. Keep a central registry with an owner, purpose and data tier for every app, add a reuse check to intake and give teams shared workspaces and templates, so the second team extends the first team's app instead of starting over.</p>
+<ul><li><strong>Discovery before build.</strong> Make search the first step of the intake form. A builder describes the problem, sees similar apps and can ask the owner for access before starting.</li><li><strong>A central registry.</strong> Track every Tier 2 and Tier 3 app in one place: name, owner, team, purpose, data sources, tier and review date. A shared sheet works to start. Many teams later build the registry as an internal app of its own.</li><li><strong>Shared workspaces and templates.</strong> Put teams in shared workspaces where they can see each other's projects. Publish approved starting points, like a standard dashboard layout or an intake form pattern, so new apps start from vetted parts.</li><li><strong>Naming and ownership metadata.</strong> Use a naming pattern such as team, function and app name, for example "finance-ap-invoice-tracker." Require an owner and a backup owner before an app can move past Tier 1.</li><li><strong>Reuse-first intake.</strong> For Tier 2 and Tier 3 requests, ask one question before approval: does something similar already exist? If it does, the default answer is to extend it.</li></ul>
+<p><strong>Put it into practice:</strong> run a one-time sweep of published apps, group them by purpose and merge or retire the obvious duplicates. Then turn on the reuse check so the sweep doesn't need repeating.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Answers &quot;How do you prevent duplicate apps?&quot; in an opening paragraph of under 60 words. Sprawl gets a line or two on ranking pages at most. The five practices are process steps, because Replit does not document an app catalog. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-security-checks-to-run-before-publishing">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> Security checks to run before publishing</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>Security checks to run before publishing</h3>
+<p>Before a vibe-coded app is published, run automated checks for exposed secrets, missing sign-in, weak access policies, unvalidated input, vulnerable dependencies and public visibility settings, and require every change to be tracked in Git. Enforce these checks in the platform, so publishing stops when a check fails.</p>
+<ul><li><strong>Secrets and API keys.</strong> Scan the code and client bundle for hardcoded keys, tokens and passwords. Move every credential to a secrets manager.</li><li><strong>Authentication and authorization.</strong> Confirm that every page and API route requires sign-in where it should, and that users can only reach their own records.</li><li><strong>Access policies and row-level security.</strong> Check database permissions. Tables that hold user data need policies that limit each user to their own rows.</li><li><strong>Input validation.</strong> Validate and sanitize form fields, query parameters and file uploads to block SQL injection and cross-site scripting.</li><li><strong>Dependency vulnerabilities.</strong> Check every package against known CVEs and block publishing above your severity threshold.</li><li><strong>Security headers and CSRF.</strong> Set standard headers like a content security policy, and protect state-changing requests against cross-site request forgery.</li><li><strong>Privacy and visibility settings.</strong> Confirm the app publishes as private unless it has an approved exception, and that preview URLs require sign-in.</li><li><strong>Agentic and AI risk.</strong> For apps that call AI models or act on other systems, test for prompt injection, give the app least-privilege permissions on each system it touches and require human approval for irreversible actions, like deleting records or sending payments.</li><li><strong>Git-tracked changes and review.</strong> Push changes to a Git remote before publishing, so every version has a record and Tier 3 apps can get a human review.</li></ul>
+<p>A clean scan is a floor. Tier 3 apps still need a human security review that looks at how the app's parts connect, because scanners catch code-level flaws more reliably than design flaws. For builder-facing advice, see <a href="https://replit.com/blog/16-ways-to-vibe-code-securely">16 ways to vibe code securely</a>.</p>
+<p><strong>Put it into practice:</strong> turn this list into your publish gate. Automate what scanners catch reliably, like secrets, dependencies and visibility settings, and review the rest during tier approval.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Answers &quot;What security checks should run before a vibe-coded app is published?&quot; in a short opening paragraph, then gives nine checks in a list, including agentic and AI risk. It links to Replit&#x27;s existing builder checklist so the two posts work together. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-roles-and-ownership">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> Roles and ownership</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>Roles and ownership</h3>
+<p>Clear ownership keeps vibe-coded apps from becoming orphans: IT and security set policy, platform admins enforce it, builders follow it and a named app owner stays accountable after launch. The RACI below assigns each activity.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Activity</th><th>IT/security</th><th>Platform admins</th><th>Builders</th><th>App owners</th></tr><tr><td>Set tier policy and publish rules</td><td>A/R</td><td>C</td><td>I</td><td>I</td></tr><tr><td>Configure platform controls</td><td>A</td><td>R</td><td>I</td><td>I</td></tr><tr><td>Register a new app and assign its tier</td><td>I</td><td>C</td><td>R</td><td>A</td></tr><tr><td>Run pre-publish checks</td><td>I</td><td>A</td><td>R</td><td>C</td></tr><tr><td>Review Tier 3 apps</td><td>A/R</td><td>C</td><td>C</td><td>R</td></tr><tr><td>Respond to vulnerabilities</td><td>A</td><td>R</td><td>C</td><td>R</td></tr><tr><td>Review access and usage each quarter</td><td>A</td><td>R</td><td>I</td><td>R</td></tr><tr><td>Retire or transfer an app</td><td>I</td><td>R</td><td>C</td><td>A</td></tr></table></div>
+<p>R = responsible, A = accountable, C = consulted, I = informed.</p>
+<p>The app owner is often the builder, but not always. For a team tool, the owner should be a manager who will still be on that team in a year.</p>
+<p><strong>Put it into practice:</strong> add an owner field to your registry and make it required. An app without an owner can't move past Tier 1.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> A RACI table settles who owns what, which most ranking pages leave vague. The owner rule targets the orphaned-app problem named earlier. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-a-30-60-90-day-rollout">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> A 30/60/90-day rollout</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>A 30/60/90-day rollout</h3>
+<p>You can stand up vibe coding governance in 90 days by starting with visibility, then adding a tiered policy, then moving enforcement into the platform. Each phase builds on the one before it.</p>
+<h4>Days 1 to 30: visibility and lightweight registration</h4>
+<ul><li>Pick one sanctioned platform and connect it to your identity provider.</li><li>Inventory what's already live: published apps, their creators and their visibility.</li><li>Launch a short registration form with owner, purpose, data sources and tier.</li><li>Announce the program as a way to get support for builders, so people have a reason to register their apps.</li></ul>
+<h4>Days 31 to 60: tiered policy</h4>
+<ul><li>Publish the three tiers and the intake questions.</li><li>Name app owners for every registered Tier 2 and Tier 3 app.</li><li>Set up review paths: platform admins for Tier 2, IT/security and data owners for Tier 3.</li><li>Run the duplicate sweep and retire or merge what you find.</li></ul>
+<h4>Days 61 to 90: enforcement at the platform layer</h4>
+<ul><li>Require private deployments by default, with documented exceptions.</li><li>Require a scan before publishing and block on high-severity findings.</li><li>Require a Git remote before publishing.</li><li>Stream audit events to your SIEM and schedule quarterly access reviews.</li></ul>
+<p><strong>Put it into practice:</strong> assign one owner for each phase and put the day-90 settings on the calendar now. Enforcement that isn't scheduled tends to slip.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> A phased plan turns the model into dated work. The order (visibility, then policy, then enforcement) follows the CSA note&#x27;s own recommendations. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="change-block" id="block-how-replit-supports-governance-at-scale">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> How Replit supports governance at scale</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>How Replit supports governance at scale</h3>
+<p>Replit Enterprise puts vibe coding controls such as required scans, private deployments and activity logging in admin settings, so the platform acts as the governance layer for enterprise vibe coding. A policy applies across workspaces, and builders follow it by default. That matches the CSA note's own conclusion: platform vendors should provide baseline controls, such as mandatory security policy templates, automatic secrets scanning at deploy time and required authentication configuration, that work "without requiring citizen developers to possess security knowledge they do not have."</p>
+<p>The difference that matters for IT is when the check runs. Enterprise admins can require a scan before any app is published, so the check happens at the organization level before the app goes live.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Control layer</th><th>Feature</th><th>What it does</th></tr><tr><td>Identity and access</td><td>SAML SSO, SCIM and roles</td><td>Members sign in through your identity provider. <a href="https://docs.replit.com/teams/identity-and-access-management/scim">SCIM</a> provisions and deprovisions members, and roles map to identity provider groups. Viewer seats give read-only access to apps and deployments</td></tr><tr><td>Environment isolation</td><td>Private development URLs</td><td>Admins can require that <a href="https://docs.replit.com/teams/privacy-and-deployment-settings">all development URLs require authentication</a>, including SSO when SAML is enabled</td></tr><tr><td>Pre-publish gates</td><td>Require security scan and severity blocking</td><td>Admins can <a href="https://docs.replit.com/teams/enterprise-privacy-settings">require scans for all publishing</a> and set the minimum severity that blocks it. Builders can also run Security Agent from the Publish flow for a deeper review of code, dependency and privacy issues</td></tr><tr><td>Pre-publish gates</td><td>Require Git remote</td><td>Requires all local changes to be pushed before publishing</td></tr><tr><td>Data and secrets</td><td>Private deployments and secret handling</td><td>Admins can make all new published apps private. Credentials are stored as Secrets, separate from the codebase, and injected at runtime</td></tr><tr><td>Data and secrets</td><td>Connector controls</td><td>Enterprise adds <a href="https://docs.replit.com/replitai/managing-connectors">organization-wide connector management</a>, and admins can see which apps and members use which services</td></tr><tr><td>Visibility and audit</td><td>Audit logs and Analytics Dashboard</td><td>The <a href="https://docs.replit.com/teams/identity-and-access-management/audit-logs">Audit Log Portal</a> lets admins view, filter and export events, with streaming to Datadog, Splunk, Amazon S3 or an HTTP endpoint. The Analytics Dashboard shows published apps with public and private breakdowns</td></tr><tr><td>Lifecycle and ownership</td><td>Workspace Security Center and app transfer</td><td>Admins filter vulnerabilities by owner and use Notify owners. Apps can be transferred between team workspaces</td></tr><tr><td>Standardization</td><td>Workspace instructions, skills and design systems</td><td>Shared instructions, reusable skills and approved design systems give every builder the same starting conventions</td></tr></table></div>
+<p>A few limits are worth knowing. The app registry, the reuse check and the 30-day rule for Tier 1 apps are part of your organization's own process, not platform features. The Analytics Dashboard and the Admin API, which pulls workspace, member, project and usage data, can feed them. Replit's own docs note that a clean scan doesn't guarantee an app is secure, so Tier 3 apps still need human review. Bring Your Own Cloud options are in private preview or early access.</p>
+<p>To see how these settings fit together, read <a href="https://replit.com/blog/new-enterprise-governance-tools">Govern Replit at scale</a> or <a href="https://replit.com/enterprise">contact the Replit enterprise team</a>.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Maps Replit Enterprise features to the six control layers in a table. Each feature is described from Replit&#x27;s docs. It opens on the CSA conclusion that platforms should enforce baseline controls, stresses that scans run before publishing, and states the limits plainly. <strong>Sources:</strong> O2, O3, R1, R2, R3, R4, R5, R6, R7, R8, R8b, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25</p>
+</div>
+<div class="change-block" id="block-faq">
+  <div class="block-header"><div class="block-label"><span class="pill-new">New</span> FAQ</div></div>
+  <div class="new-block"><div class="ba-label">New</div>
+<h3>Frequently asked questions</h3>
+<h4>How do you find vibe-coded apps that are already running?</h4>
+<p>Start with what your platforms already record: published apps, their creators and whether each one is public. Audit logs and expense reports for AI tool subscriptions show where building happens outside approved tools. Then open a short registration form and tell builders that registering gets them support.</p>
+<h4>Do builders need security training to vibe code safely?</h4>
+<p>A short orientation on which data they can use and how the tiers work covers most builders. The heavy lifting belongs in the platform: required sign-in, private publishing by default and scans that block risky apps. Save deeper training for owners of Tier 3 apps.</p>
+<h4>How long does a vibe coding governance rollout take?</h4>
+<p>The plan in this guide takes 90 days. Visibility and registration come first, a tiered policy follows in the second month, and platform enforcement starts in the third. If you already have one sanctioned platform tied to your identity provider, you can start the third phase sooner.</p>
+<h4>Should you ban vibe coding?</h4>
+<p>Bans tend to push building onto personal accounts and unapproved tools, where IT has no visibility at all. A sanctioned platform with clear tiers gives builders an approved path. Restrict specific risks instead, like public publishing or connections to regulated data.</p>
+<h4>Who owns a vibe-coded app?</h4>
+<p>A named app owner is accountable for each app, even when someone else built it. For team tools, the owner should be a manager who will stay with the team. When an owner leaves, ownership moves to their team, and the app is reviewed or retired.</p>
+<h4>Is vibe coding compatible with SOC 2 and GDPR?</h4>
+<p>Yes, if vibe-coded apps fall under the same controls as your other systems: access control, audit trails, change tracking and data mapping. The obligations follow the data, so an app that handles personal data needs the same records as any other. Replit has achieved a SOC 2 Type 2 attestation for its own platform. Each app built on it still needs its own controls.</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Six practical questions a reader asks after the body: finding apps already running, training, rollout time, bans, ownership and compliance. Each answer is 2 to 3 self-contained sentences, and the FAQPage schema repeats them word for word. <strong>Sources:</strong> R26</p>
+</div>
+<div class="change-block" id="block-template-follow">
+  <div class="block-header"><div class="block-label"><span class="pill-unch">Template (verbatim)</span> Post footer</div></div>
+  <div class="unch-block"><div class="ba-label">Template (verbatim)</div>
+<p>Follow @Replit</p>
+<p>More</p>
+<p>[Three related post cards]</p>
+  </div>
+  <p style="font-size:12px;color:var(--text-subtle);margin-top:10px;"><strong>Why:</strong> Standard Replit blog footer, reproduced as it appears on existing posts. <strong>Sources:</strong> n/a</p>
+</div>
+<div class="section-label">Structured Data</div>
+<div class="schema-wrap">
+  <div class="schema-header"><span>BlogPosting + BreadcrumbList (keep, as on Replit blog posts) &middot; FAQPage (add, mirrors visible FAQ)</span><button class="schema-copy-btn" onclick="copySchema(this)">Copy</button></div>
+  <div class="schema-display"><pre id="schema-json-store">[
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BlogPosting&quot;,
+    &quot;headline&quot;: &quot;Governing vibe coding at scale: an enterprise guide&quot;,
+    &quot;description&quot;: &quot;A practical model for vibe coding governance: risk tiers, control layers, pre-publish security checks, a RACI and a 30/60/90-day rollout.&quot;,
+    &quot;datePublished&quot;: &quot;2026-11-02&quot;,
+    &quot;dateModified&quot;: &quot;2026-11-02&quot;,
+    &quot;mainEntityOfPage&quot;: &quot;https://replit.com/blog/governing-vibe-coding&quot;,
+    &quot;image&quot;: &quot;https://replit.com/[article cover image]&quot;,
+    &quot;author&quot;: {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;name&quot;: &quot;The Replit Team&quot;,
+      &quot;url&quot;: &quot;https://replit.com&quot;
+    },
+    &quot;publisher&quot;: {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;name&quot;: &quot;Replit&quot;,
+      &quot;url&quot;: &quot;https://replit.com&quot;
+    }
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Blog&quot;,
+        &quot;item&quot;: &quot;https://replit.com/blog&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Governing vibe coding at scale: an enterprise guide&quot;,
+        &quot;item&quot;: &quot;https://replit.com/blog/governing-vibe-coding&quot;
+      }
+    ]
+  },
+  {
+    &quot;@context&quot;: &quot;https://schema.org&quot;,
+    &quot;@type&quot;: &quot;FAQPage&quot;,
+    &quot;mainEntity&quot;: [
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;How do you find vibe-coded apps that are already running?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;Start with what your platforms already record: published apps, their creators and whether each one is public. Audit logs and expense reports for AI tool subscriptions show where building happens outside approved tools. Then open a short registration form and tell builders that registering gets them support.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Do builders need security training to vibe code safely?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;A short orientation on which data they can use and how the tiers work covers most builders. The heavy lifting belongs in the platform: required sign-in, private publishing by default and scans that block risky apps. Save deeper training for owners of Tier 3 apps.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;How long does a vibe coding governance rollout take?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;The plan in this guide takes 90 days. Visibility and registration come first, a tiered policy follows in the second month, and platform enforcement starts in the third. If you already have one sanctioned platform tied to your identity provider, you can start the third phase sooner.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Should you ban vibe coding?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;Bans tend to push building onto personal accounts and unapproved tools, where IT has no visibility at all. A sanctioned platform with clear tiers gives builders an approved path. Restrict specific risks instead, like public publishing or connections to regulated data.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Who owns a vibe-coded app?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;A named app owner is accountable for each app, even when someone else built it. For team tools, the owner should be a manager who will stay with the team. When an owner leaves, ownership moves to their team, and the app is reviewed or retired.&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Question&quot;,
+        &quot;name&quot;: &quot;Is vibe coding compatible with SOC 2 and GDPR?&quot;,
+        &quot;acceptedAnswer&quot;: {
+          &quot;@type&quot;: &quot;Answer&quot;,
+          &quot;text&quot;: &quot;Yes, if vibe-coded apps fall under the same controls as your other systems: access control, audit trails, change tracking and data mapping. The obligations follow the data, so an app that handles personal data needs the same records as any other. Replit has achieved a SOC 2 Type 2 attestation for its own platform. Each app built on it still needs its own controls.&quot;
+        }
+      }
+    ]
+  }
+]</pre></div>
+</div>
+<p style="font-size:12px;color:var(--text-subtle);margin-top:10px;">Keep BlogPosting and BreadcrumbList, which Replit blog posts already carry. Add FAQPage with the 6 questions above, word for word.</p>
+<div class="section-label">Claims Register</div><div class="tbl-scroll"><table class="kw-table"><tr><th>ID</th><th>Claim</th><th>Type</th><th>Source</th><th>Quote (exact)</th><th>Verdict</th><th>Status</th></tr><tr><td>N1</td><td>20% of organizations studied by IBM suffered a breach involving shadow AI</td><td>number / IBM</td><td><a href="https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91">ibm.com</a></td><td>&ldquo;20% said they suffered a breach due to security incidents involving shadow AI&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N2</td><td>Organizations with high levels of shadow AI paid an average of $670,000 more per breach than those with low levels or none</td><td>number / IBM</td><td><a href="https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91">ibm.com</a></td><td>&ldquo;those breaches added USD 670,000 to the average breach price tag compared to those that had low levels of shadow AI or none&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N3</td><td>28.65 million new hardcoded secrets in public GitHub commits in 2025, up 34% year over year</td><td>number / GitGuardian</td><td><a href="https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026/">blog.gitguardian.com</a></td><td>&ldquo;28.65 million new hardcoded secrets were added to public GitHub commits in 2025 alone, a 34% increase year over year&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N4</td><td>Georgia Tech&#x27;s Vibe Security Radar tracked 6, 15 and 35 CVEs attributed to AI-generated code in Jan, Feb and Mar 2026 (as reported by CSA)</td><td>number / CSA citing Georgia Tech</td><td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">labs.cloudsecurityalliance.org</a></td><td>&ldquo;6 CVEs in January 2026, 15 in February, and 35 in March 2026 alone&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N5</td><td>EU AI Act Annex III high-risk rules apply from December 2, 2027</td><td>date / European Commission</td><td><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act">ai-act-service-desk.ec.europa.eu</a></td><td>&ldquo;Rules for high-risk AI systems in Annex III apply&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N6</td><td>The EU timeline reflects the Digital Omnibus on AI amendments</td><td>date / European Commission</td><td><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act">ai-act-service-desk.ec.europa.eu</a></td><td>&ldquo;The timeline takes into account the AI Act amendments introduced by Digital Omnibus on AI.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N7</td><td>High-risk obligations were originally set for August 2, 2026</td><td>date / CSA</td><td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">labs.cloudsecurityalliance.org</a></td><td>&ldquo;EU AI Act full enforcement for high-risk systems begins August 2, 2026&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>O1</td><td>CSA: the platform is sanctioned, the application is not</td><td>quote / CSA</td><td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">labs.cloudsecurityalliance.org</a></td><td>&ldquo;The platform is sanctioned; the application is not.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>O2</td><td>CSA: platform vendors should provide baseline controls (policy templates, deploy-time secrets scanning, required auth configuration)</td><td>quote / CSA</td><td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">labs.cloudsecurityalliance.org</a></td><td>&ldquo;mandatory security policy templates, automatic secrets scanning at deploy time, required authentication configuration&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>O3</td><td>CSA: these controls work without citizen developers needing security knowledge</td><td>quote / CSA</td><td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">labs.cloudsecurityalliance.org</a></td><td>&ldquo;without requiring citizen developers to possess security knowledge they do not have&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R1</td><td>SAML SSO requires members to sign in through the identity provider</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;Requires members to authenticate with your identity provider.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R2</td><td>SCIM provisions and deprovisions members</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;Provisions and deprovisions members from your identity provider.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R3</td><td>Roles map to identity provider groups</td><td>product / Replit</td><td><a href="https://docs.replit.com/billing/plans/replit-enterprise">docs.replit.com</a></td><td>&ldquo;Role-based access control mapped to your identity provider&#x27;s groups&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R4</td><td>Viewer seats give read-only access to apps and deployments</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/identity-and-access-management/groups-and-permissions">docs.replit.com</a></td><td>&ldquo;Read-only access to apps and deployments&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R5</td><td>Admins can require all development URLs to require authentication, including SSO when SAML is enabled</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/privacy-and-deployment-settings">docs.replit.com</a></td><td>&ldquo;When enabled, all app development URLs require authentication. This includes SSO if your organization has enabled SAML.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R6</td><td>Enterprise admins can require a security scan for all publishing</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;requires scans for all publishing&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R7</td><td>Admins set the minimum severity that blocks publishing</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;Sets the minimum vulnerability severity that blocks publishing when a scan runs&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R8</td><td>Security Agent reviews code, dependency and privacy issues</td><td>product / Replit</td><td><a href="https://docs.replit.com/features/security/overview">docs.replit.com</a></td><td>&ldquo;audits your codebase for code, dependency, and privacy vulnerabilities&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R9</td><td>Require Git remote: all local changes pushed before publishing</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;requires all local changes to be pushed before publishing&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R10</td><td>Admins can make all new published apps private</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/enterprise-privacy-settings">docs.replit.com</a></td><td>&ldquo;Makes all new published apps private.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R12</td><td>Enterprise adds organization-wide connector management</td><td>product / Replit</td><td><a href="https://docs.replit.com/replitai/managing-connectors">docs.replit.com</a></td><td>&ldquo;Organization-wide connector management with advanced controls&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R13</td><td>Admins can see which apps and members use which services</td><td>product / Replit</td><td><a href="https://docs.replit.com/replitai/managing-connectors">docs.replit.com</a></td><td>&ldquo;See which apps and members use which services.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R14</td><td>Audit Log Portal: view, filter and export events</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/identity-and-access-management/audit-logs">docs.replit.com</a></td><td>&ldquo;View, filter, and bulk-export audit events.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R15</td><td>Audit events stream to Datadog, Splunk, Amazon S3 or an HTTP endpoint</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/identity-and-access-management/audit-logs">docs.replit.com</a></td><td>&ldquo;Stream events to Datadog, Splunk, Amazon S3, or a generic HTTP endpoint.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R16</td><td>Analytics Dashboard shows published apps with public and private breakdowns</td><td>product / Replit</td><td><a href="https://docs.replit.com/billing/teams-billing/analytics-dashboard">docs.replit.com</a></td><td>&ldquo;View total published apps with public vs. private access breakdowns&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R17</td><td>Workspace Security Center filters findings by owner</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/security">docs.replit.com</a></td><td>&ldquo;Filter by severity, owner, publishing status, and visibility.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R18</td><td>Notify owners alerts the people responsible</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/security">docs.replit.com</a></td><td>&ldquo;to alert the people responsible for affected projects&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R19</td><td>Apps can be transferred between team workspaces</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/identity-and-access-management/transfer-app-to-teams">docs.replit.com</a></td><td>&ldquo;You can move a project from one team workspace to another&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R20</td><td>Workspace instructions are shared with everyone in the Workspace</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/standardization">docs.replit.com</a></td><td>&ldquo;Custom instructions are always-on guidelines shared with everyone in the Workspace&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R21</td><td>Skills are reusable sets of instructions</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/standardization">docs.replit.com</a></td><td>&ldquo;A skill is a reusable set of instructions&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R22</td><td>Approved design systems as the foundation for new apps</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/standardization">docs.replit.com</a></td><td>&ldquo;Use an approved system as the visual foundation for new applications&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R23</td><td>Admin API pulls workspace, member, project and usage data</td><td>product / Replit</td><td><a href="https://replit.com/blog/new-enterprise-governance-tools">replit.com</a></td><td>&ldquo;Admin API lets you pull workspace, member, project, and usage data&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R24</td><td>A clean scan does not guarantee an app is secure</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/security">docs.replit.com</a></td><td>&ldquo;A clean scan does not guarantee that an application is secure.&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R25</td><td>Bring Your Own Cloud options are in private preview or early access</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/bring-your-own-cloud">docs.replit.com</a></td><td>&ldquo;Full BYOC is in private preview&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R26</td><td>Replit has achieved a SOC 2 Type 2 attestation</td><td>product / Replit</td><td><a href="https://docs.replit.com/teams/information-security/overview">docs.replit.com</a></td><td>&ldquo;Replit has achieved SOC 2 Type 2 Attestation of Compliance&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R8b</td><td>Builders can run Security Agent from the Publish flow</td><td>product / Replit</td><td><a href="https://docs.replit.com/features/security/overview">docs.replit.com</a></td><td>&ldquo;The Review security button in the project&#x27;s Publish flow&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R11</td><td>Credentials are stored as Secrets, separate from the codebase, and injected at runtime</td><td>product / Replit</td><td><a href="https://replit.com/security">replit.com</a></td><td>&ldquo;Credentials are injected via a transparent sidecar proxy at runtime&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R27</td><td>Each app runs in its own cloud sandbox</td><td>product / Replit</td><td><a href="https://replit.com/blog/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack">replit.com</a></td><td>&ldquo;runs in its own isolated sandbox&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R28</td><td>Apps have a separate frontend and backend</td><td>product / Replit</td><td><a href="https://replit.com/blog/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack">replit.com</a></td><td>&ldquo;a separate frontend and backend&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R29</td><td>Connectors such as Databricks let apps query governed tables in place</td><td>product / Replit</td><td><a href="https://replit.com/blog/vibe-coding-data-apps-replit-databricks">replit.com</a></td><td>&ldquo;Query Databricks tables&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R30</td><td>Without copying sensitive data into the app</td><td>product / Replit</td><td><a href="https://replit.com/blog/vibe-coding-data-apps-replit-databricks">replit.com</a></td><td>&ldquo;without copying sensitive data around&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>R31</td><td>Replit backs up every filesystem at least daily</td><td>product / Replit</td><td><a href="https://replit.com/blog/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack">replit.com</a></td><td>&ldquo;backed up at least daily&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr><tr><td>N9</td><td>Georgia Tech&#x27;s Vibe Security Radar: 35 cases in March 2026, 56 in the first three months</td><td>number / Georgia Tech</td><td><a href="https://news.research.gatech.edu/2026/04/13/bad-vibes-ai-generated-code-vulnerable-researchers-warn">news.research.gatech.edu</a></td><td>&ldquo;March 2026 alone had 35&rdquo;</td><td>Supported, exact quote matched</td><td>Ships</td></tr></table></div><p style="font-size:12px;color:var(--text-subtle);">Claims about Replit are checked only against replit.com and docs.replit.com. Figures come from the primary IBM, GitGuardian and European Commission sources. The Georgia Tech CVE counts are cited through the Cloud Security Alliance note. Every quote matches its source page.</p>
+<div class="section-label">Keyword Coverage</div><div class="tbl-scroll"><table class="kw-table"><tr><th>Term</th><th>Importance</th><th>Target range</th><th>Uses in draft</th><th>Note</th></tr><tr><td>vibe coding</td><td>10</td><td>9 to 27</td><td class="kw-hit">20</td><td></td></tr><tr><td>governance</td><td>8</td><td>4 to 10</td><td class="kw-hit">10</td><td></td></tr><tr><td>technical debt</td><td>7</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>guardrails</td><td>5</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>lovable</td><td>5</td><td>1 to 3</td><td class="kw-miss">0</td><td>Left out: other vendor name</td></tr><tr><td>bolt</td><td>5</td><td>1 to 3</td><td class="kw-miss">0</td><td>Left out: other vendor name</td></tr><tr><td>ai-generated code</td><td>5</td><td>2 to 4</td><td class="kw-hit">2</td><td></td></tr><tr><td>replit</td><td>5</td><td>1 to 3</td><td class="kw-miss">9</td><td>Above range: brand post with a Replit section</td></tr><tr><td>proof of concept</td><td>5</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>shadow it</td><td>4</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>audit trails</td><td>4</td><td>1 to 3</td><td class="kw-hit">2</td><td></td></tr><tr><td>maintainability</td><td>4</td><td>1 to 3</td><td class="kw-hit">1</td><td></td></tr><tr><td>soc 2</td><td>4</td><td>1 to 2</td><td class="kw-hit">2</td><td></td></tr><tr><td>security vulnerabilities</td><td>4</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>natural-language</td><td>4</td><td>1 to 3</td><td class="kw-hit">1</td><td></td></tr><tr><td>internal tools</td><td>4</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>ai-assisted development</td><td>4</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>security review</td><td>3</td><td>1 to 3</td><td class="kw-hit">3</td><td></td></tr><tr><td>access controls</td><td>3</td><td>1 to 3</td><td class="kw-hit">2</td><td></td></tr><tr><td>security scan</td><td>3</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>poc</td><td>3</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>authentication</td><td>3</td><td>1 to 3</td><td class="kw-hit">3</td><td></td></tr><tr><td>governance risks</td><td>2</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>github copilot</td><td>2</td><td>1 to 2</td><td class="kw-miss">0</td><td>Left out: other vendor name</td></tr><tr><td>ai coding assistants</td><td>2</td><td>2 to 4</td><td class="kw-hit">2</td><td></td></tr><tr><td>security controls</td><td>2</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>role-based access</td><td>2</td><td>1 to 2</td><td class="kw-hit">2</td><td></td></tr><tr><td>product management</td><td>2</td><td>3 to 9</td><td class="kw-hit">3</td><td></td></tr><tr><td>governance layer</td><td>2</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>enterprise vibe coding</td><td>2</td><td>4 to 12</td><td class="kw-hit">4</td><td></td></tr><tr><td>cursor</td><td>2</td><td>1 to 3</td><td class="kw-miss">0</td><td>Left out: other vendor name</td></tr><tr><td>code review</td><td>2</td><td>1 to 2</td><td class="kw-hit">2</td><td></td></tr><tr><td>approval workflows</td><td>2</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>input validation</td><td>2</td><td>1 to 2</td><td class="kw-hit">2</td><td></td></tr><tr><td>audit logs</td><td>2</td><td>1 to 2</td><td class="kw-hit">2</td><td></td></tr><tr><td>generative ai</td><td>2</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>technical debt management</td><td>1</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>superblocks</td><td>1</td><td>2 to 6</td><td class="kw-miss">0</td><td>Left out: other vendor name</td></tr><tr><td>snowflake complexity</td><td>1</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr><tr><td>single sign-on</td><td>1</td><td>1 to 2</td><td class="kw-hit">1</td><td></td></tr></table></div>
+</div>
+<!-- TAB1_END -->
+</div>
+
+<div id="tab2" class="tab-panel">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- TAB2_START -->
+<div class="placeholder-screen" id="mockup-placeholder" style="display:none;min-height:calc(100vh - var(--nav-h));align-items:center;justify-content:center;flex-direction:column;">
+  <strong>Optimization stopped</strong>
+  <p>SERP page-type mismatch. See the Appendix tab.</p>
+</div>
+<div id="mockup-content">
+<div class="page" style="background:#fff;">
+<div class="cs-row"><strong>Clearscope Optimization</strong> &middot; Score: A++ &middot; Clearscope draft: <a href="https://www.clearscope.io/daydream/drafts/1e9bf1112d4b4851/editor?p=11abee58" target="_blank" rel="noopener">Open in Clearscope</a></div>
+<nav><div class="nav-logo">Replit</div><div class="nav-links">Product &nbsp; Solutions &nbsp; Pricing &nbsp; Enterprise &nbsp; Resources</div><div class="nav-ctas"><span class="btn">Contact sales</span> <span class="btn">Log in</span> <span class="btn-dark btn" style="background:#F26207;">Sign up</span></div></nav>
+<div class="section-tag tag-new">New</div>
+<article class="rb">
+  <div class="rb-crumb">Blog &rsaquo; Enterprise</div>
+  <h1>Governing vibe coding at scale: an enterprise guide</h1>
+  <div class="rb-meta"><span>Published: <b>Nov 2, 2026</b></span><span>Updated: <b>Nov 2, 2026</b></span><span>The Replit Team</span></div>
+  <div class="rb-cover placeholder placeholder-img">[Cover image: Replit admin settings with security, privacy and source control policies]</div>
+<p>Vibe coding governance is the set of policies and platform controls that let employees <a href="https://replit.com/blog/what-is-vibe-coding">build apps with AI</a> while IT keeps visibility and control.</p>
+<p>Most builders sit outside engineering, in operations, finance, HR and product management. They describe what they want in natural language, and code review never sees their work.</p>
+<p>Banning vibe coding doesn't stop it. It pushes it onto personal accounts and unapproved tools, which is shadow IT with an AI engine attached. IBM's <a href="https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91">Cost of a Data Breach Report 2025</a> found that 20% of organizations studied had a breach involving shadow AI, and high levels of shadow AI added an average of $670,000 per breach.</p>
+<p>The workable answer for enterprise vibe coding is a sanctioned platform with the guardrails built in. This guide covers what to govern, how to tier risk, which controls to enforce, who owns what and how to roll it out in 90 days.</p>
+<h2>What vibe coding governance actually means</h2>
+<p>Governing vibe coding means setting rules for apps that people build by describing them to an AI, where the person who builds the app may never read the code behind it. The rules have to work without that person's review, so they belong in the platform the apps are built and published on.</p>
+<h3>How it differs from governing AI coding assistants</h3>
+<p>Engineers who use AI coding assistants still read diffs, run tests and send changes through code review. That is AI-assisted development, and your existing software development lifecycle mostly covers it. The engineer stays accountable for every line.</p>
+<p>Vibe coding removes that reviewer. An operations analyst who builds a vendor-tracking app judges it by whether it works. How it's built is invisible to them. The AI-generated code can be correct and still ship with a hardcoded key or an open endpoint. Policies that assume someone will read the code don't apply, so citizen developer governance for vibe coding has to live in the platform.</p>
+<h3>Sanctioned platform, unsanctioned app</h3>
+<p>Approving a platform doesn't approve every app built on it. The Cloud Security Alliance's research note <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-vibe-coding-ai-governance-gap-20260602-csa/">The Vibe Coding Governance Gap</a> puts it plainly: "The platform is sanctioned; the application is not." The risk now lives inside approved tools, in apps that nobody in IT has seen.</p>
+<p><strong>Put it into practice:</strong> write one sentence that defines a governed app in your organization, such as "any app built with AI that runs on company data or is shared with more than one person." Every policy in the rest of this guide hangs off that definition.</p>
+<h2>Where vibe coding breaks down at scale</h2>
+<p>Vibe coding breaks down at scale when apps multiply faster than anyone can track them, go live without review and outlive the people who built them. These six governance risks show up in almost every enterprise vibe coding program.</p>
+<h3>Shadow apps and no inventory</h3>
+<p>You can't secure an app you don't know exists. Without a registry, a security team can't answer basic questions: how many apps are live, who built them and what data they read. Incident response starts with a hunt for the app.</p>
+<h3>Duplicate apps and sprawl</h3>
+<p>When building takes an afternoon, teams rebuild before they look for what exists. Two product management teams build two feature-request trackers, three regions end up with three expense trackers, each with its own logic and its own copy of the data. Every one-off adds snowflake complexity and future technical debt management work.</p>
+<h3>Unreviewed publishing</h3>
+<p>A vibe-coded app can go from prompt to public URL in minutes, and its security vulnerabilities go live with it. The common gaps are predictable: API keys in client code, missing sign-in, database tables without row-level security, and open preview links. GitGuardian's <a href="https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026/">State of Secrets Sprawl 2026</a> counted 28.65 million new hardcoded secrets in public GitHub commits in 2025, a 34% increase over the year before. The CSA note also reports that Georgia Tech's <a href="https://news.research.gatech.edu/2026/04/13/bad-vibes-ai-generated-code-vulnerable-researchers-warn">Vibe Security Radar</a> tracked 6 CVEs attributed to AI-generated code in January 2026, 15 in February and 35 in March.</p>
+<h3>Sensitive data in prompts and connectors</h3>
+<p>Builders paste customer records into prompts and connect apps to CRMs, warehouses and inboxes. Each connection is a new data flow that your data protection team never mapped. Generative AI also makes it easy to send that data to an outside model without anyone noticing.</p>
+<h3>Orphaned apps with no owner</h3>
+<p>The builder changes roles or leaves. The app keeps running, keeps its access and keeps processing data. Nobody patches its dependencies, and nobody knows whether anyone still uses it.</p>
+<h3>Compliance blind spots</h3>
+<p>GDPR and HIPAA obligations follow the data an app handles. How the app was built doesn't change them. A vibe-coded app that touches health records carries the same HIPAA exposure as one built by engineers. The EU AI Act adds rules for high-risk AI systems. Under the <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act">current EU timeline</a>, the Annex III high-risk rules apply from December 2, 2027, after the Digital Omnibus on AI moved the original August 2, 2026 date. An app that screens job candidates or scores credit could fall into that category.</p>
+<p><strong>Put it into practice:</strong> score your organization against these six points today. Each one you can't answer becomes a line item in the rollout plan below.</p>
+<h2>A tiered governance model</h2>
+<p>A tiered model matches the depth of review to the risk of the app, so a personal prototype moves fast while an app that touches regulated data gets a full security review. Three tiers cover most cases.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Tier</th><th>Examples</th><th>Required controls</th><th>Who reviews</th><th>Publish rule</th></tr><tr><td>Tier 1: Personal or prototype</td><td>A proof of concept (PoC), a personal calculator, a demo for one meeting</td><td>Company sign-in, private by default, automated scan, no production data</td><td>No one. The builder self-certifies</td><td>Private only. Register or delete within 30 days</td></tr><tr><td>Tier 2: Internal team tool, non-sensitive data</td><td>Internal tools like a team dashboard, a request intake form or a product management tracker</td><td>Tier 1 controls plus registry entry, named owner, role-based access, passing scan, Git-tracked changes</td><td>Platform admin checks the registry entry and scan result</td><td>Private deployment inside the company. Publishing blocked on failed scan</td></tr><tr><td>Tier 3: Regulated data, customer-facing or agentic</td><td>Apps that touch PII, health or payment data, apps for customers, apps that call AI APIs or act on external systems</td><td>Tier 2 controls plus security review, data protection review, input validation and output checks, logged connectors, approval workflows</td><td>IT/security and the data owner</td><td>Public only after sign-off. Re-review on major changes</td></tr></table></div>
+<p>Tiers keep enterprise vibe coding fast where risk is low. They should also be easy to assign. Ask three questions at intake: whose data does it touch, who will use it and can it take actions outside the app? The highest answer sets the tier.</p>
+<p><strong>Put it into practice:</strong> publish the tier table internally, add the three intake questions to your registry form and set Tier 1 as the default for every new app.</p>
+<h2>The control layers</h2>
+<p>Six control layers cover most vibe coding security risk: identity and access, environment isolation, pre-publish gates, data and secrets, visibility and audit, and lifecycle and ownership. Each layer should be enforced by the platform, so the builder doesn't have to remember it. Together they form the security controls an auditor will ask about.</p>
+<h3>Identity and access</h3>
+<p>Tie every builder and every app user to your identity provider. Require single sign-on, provision and remove users automatically, and map identity provider groups to roles. Use role-based access so a viewer can open an app without being able to edit or publish it. These access controls are the base that every other security control depends on.</p>
+<h3>Environment isolation</h3>
+<p>Keep development and production apart. Preview links should require company sign-in, production data shouldn't be reachable from a prototype, and each app should only see its own data. Isolation limits the blast radius when one app has a flaw. Replit, for example, runs each app in <a href="https://replit.com/blog/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack">its own cloud sandbox</a> with a separate frontend and backend.</p>
+<h3>Pre-publish gates</h3>
+<p>Publishing is the one moment every app passes through, so it's the right place for checks. Require an automated scan before any app goes live, block publishing when findings cross a severity threshold, and require changes to be pushed to a Git remote first. The gate runs the same way for every builder.</p>
+<h3>Data and secrets</h3>
+<p>Keep credentials out of code and out of prompts. Store keys in a secrets manager that injects them at runtime, scope each connector to the apps that need it and limit which AI models and providers teams can use. Treat prompt content as data that may hold personal information. On Replit, connectors such as the <a href="https://replit.com/blog/vibe-coding-data-apps-replit-databricks">Databricks integration</a> let apps query governed tables in place, without copying sensitive data into the app.</p>
+<h3>Visibility and audit</h3>
+<p>Log who built, changed, published and accessed each app, and stream those events to your SIEM. Audit trails turn an incident from guesswork into a timeline. Pair them with a usage view that shows every published app, its creator and whether it's public or private.</p>
+<h3>Lifecycle and ownership</h3>
+<p>Every app needs a named owner, a review date and a way to retire it. When an owner leaves, ownership moves to their team. Unused apps get unpublished on a schedule. After launch, rescan published apps when a new vulnerability affects their dependencies, and keep a fast way to unpublish an app and revoke its connectors during an incident. Move a team tool to engineering ownership once the business depends on it, for example when it handles customer or regulated data or a team can't work without it. Replit backs up every filesystem at least daily, which gives owners a recovery point if a change goes wrong. This layer is what keeps maintainability from falling apart over time.</p>
+<p><strong>Put it into practice:</strong> list the six layers in a table and mark each one as enforced by the platform, enforced by process or not covered. Close the "not covered" rows first.</p>
+<h2>How to prevent duplicate apps</h2>
+<p>Prevent duplicate apps by making existing apps easy to find before anyone builds a new one. Keep a central registry with an owner, purpose and data tier for every app, add a reuse check to intake and give teams shared workspaces and templates, so the second team extends the first team's app instead of starting over.</p>
+<ul><li><strong>Discovery before build.</strong> Make search the first step of the intake form. A builder describes the problem, sees similar apps and can ask the owner for access before starting.</li><li><strong>A central registry.</strong> Track every Tier 2 and Tier 3 app in one place: name, owner, team, purpose, data sources, tier and review date. A shared sheet works to start. Many teams later build the registry as an internal app of its own.</li><li><strong>Shared workspaces and templates.</strong> Put teams in shared workspaces where they can see each other's projects. Publish approved starting points, like a standard dashboard layout or an intake form pattern, so new apps start from vetted parts.</li><li><strong>Naming and ownership metadata.</strong> Use a naming pattern such as team, function and app name, for example "finance-ap-invoice-tracker." Require an owner and a backup owner before an app can move past Tier 1.</li><li><strong>Reuse-first intake.</strong> For Tier 2 and Tier 3 requests, ask one question before approval: does something similar already exist? If it does, the default answer is to extend it.</li></ul>
+<p><strong>Put it into practice:</strong> run a one-time sweep of published apps, group them by purpose and merge or retire the obvious duplicates. Then turn on the reuse check so the sweep doesn't need repeating.</p>
+<h2>Security checks to run before publishing</h2>
+<p>Before a vibe-coded app is published, run automated checks for exposed secrets, missing sign-in, weak access policies, unvalidated input, vulnerable dependencies and public visibility settings, and require every change to be tracked in Git. Enforce these checks in the platform, so publishing stops when a check fails.</p>
+<ul><li><strong>Secrets and API keys.</strong> Scan the code and client bundle for hardcoded keys, tokens and passwords. Move every credential to a secrets manager.</li><li><strong>Authentication and authorization.</strong> Confirm that every page and API route requires sign-in where it should, and that users can only reach their own records.</li><li><strong>Access policies and row-level security.</strong> Check database permissions. Tables that hold user data need policies that limit each user to their own rows.</li><li><strong>Input validation.</strong> Validate and sanitize form fields, query parameters and file uploads to block SQL injection and cross-site scripting.</li><li><strong>Dependency vulnerabilities.</strong> Check every package against known CVEs and block publishing above your severity threshold.</li><li><strong>Security headers and CSRF.</strong> Set standard headers like a content security policy, and protect state-changing requests against cross-site request forgery.</li><li><strong>Privacy and visibility settings.</strong> Confirm the app publishes as private unless it has an approved exception, and that preview URLs require sign-in.</li><li><strong>Agentic and AI risk.</strong> For apps that call AI models or act on other systems, test for prompt injection, give the app least-privilege permissions on each system it touches and require human approval for irreversible actions, like deleting records or sending payments.</li><li><strong>Git-tracked changes and review.</strong> Push changes to a Git remote before publishing, so every version has a record and Tier 3 apps can get a human review.</li></ul>
+<p>A clean scan is a floor. Tier 3 apps still need a human security review that looks at how the app's parts connect, because scanners catch code-level flaws more reliably than design flaws. For builder-facing advice, see <a href="https://replit.com/blog/16-ways-to-vibe-code-securely">16 ways to vibe code securely</a>.</p>
+<p><strong>Put it into practice:</strong> turn this list into your publish gate. Automate what scanners catch reliably, like secrets, dependencies and visibility settings, and review the rest during tier approval.</p>
+<h2>Roles and ownership</h2>
+<p>Clear ownership keeps vibe-coded apps from becoming orphans: IT and security set policy, platform admins enforce it, builders follow it and a named app owner stays accountable after launch. The RACI below assigns each activity.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Activity</th><th>IT/security</th><th>Platform admins</th><th>Builders</th><th>App owners</th></tr><tr><td>Set tier policy and publish rules</td><td>A/R</td><td>C</td><td>I</td><td>I</td></tr><tr><td>Configure platform controls</td><td>A</td><td>R</td><td>I</td><td>I</td></tr><tr><td>Register a new app and assign its tier</td><td>I</td><td>C</td><td>R</td><td>A</td></tr><tr><td>Run pre-publish checks</td><td>I</td><td>A</td><td>R</td><td>C</td></tr><tr><td>Review Tier 3 apps</td><td>A/R</td><td>C</td><td>C</td><td>R</td></tr><tr><td>Respond to vulnerabilities</td><td>A</td><td>R</td><td>C</td><td>R</td></tr><tr><td>Review access and usage each quarter</td><td>A</td><td>R</td><td>I</td><td>R</td></tr><tr><td>Retire or transfer an app</td><td>I</td><td>R</td><td>C</td><td>A</td></tr></table></div>
+<p>R = responsible, A = accountable, C = consulted, I = informed.</p>
+<p>The app owner is often the builder, but not always. For a team tool, the owner should be a manager who will still be on that team in a year.</p>
+<p><strong>Put it into practice:</strong> add an owner field to your registry and make it required. An app without an owner can't move past Tier 1.</p>
+<h2>A 30/60/90-day rollout</h2>
+<p>You can stand up vibe coding governance in 90 days by starting with visibility, then adding a tiered policy, then moving enforcement into the platform. Each phase builds on the one before it.</p>
+<h3>Days 1 to 30: visibility and lightweight registration</h3>
+<ul><li>Pick one sanctioned platform and connect it to your identity provider.</li><li>Inventory what's already live: published apps, their creators and their visibility.</li><li>Launch a short registration form with owner, purpose, data sources and tier.</li><li>Announce the program as a way to get support for builders, so people have a reason to register their apps.</li></ul>
+<h3>Days 31 to 60: tiered policy</h3>
+<ul><li>Publish the three tiers and the intake questions.</li><li>Name app owners for every registered Tier 2 and Tier 3 app.</li><li>Set up review paths: platform admins for Tier 2, IT/security and data owners for Tier 3.</li><li>Run the duplicate sweep and retire or merge what you find.</li></ul>
+<h3>Days 61 to 90: enforcement at the platform layer</h3>
+<ul><li>Require private deployments by default, with documented exceptions.</li><li>Require a scan before publishing and block on high-severity findings.</li><li>Require a Git remote before publishing.</li><li>Stream audit events to your SIEM and schedule quarterly access reviews.</li></ul>
+<p><strong>Put it into practice:</strong> assign one owner for each phase and put the day-90 settings on the calendar now. Enforcement that isn't scheduled tends to slip.</p>
+<h2>How Replit supports governance at scale</h2>
+<p>Replit Enterprise puts vibe coding controls such as required scans, private deployments and activity logging in admin settings, so the platform acts as the governance layer for enterprise vibe coding. A policy applies across workspaces, and builders follow it by default. That matches the CSA note's own conclusion: platform vendors should provide baseline controls, such as mandatory security policy templates, automatic secrets scanning at deploy time and required authentication configuration, that work "without requiring citizen developers to possess security knowledge they do not have."</p>
+<p>The difference that matters for IT is when the check runs. Enterprise admins can require a scan before any app is published, so the check happens at the organization level before the app goes live.</p>
+<div class="tbl-scroll"><table class="data-table art-table"><tr><th>Control layer</th><th>Feature</th><th>What it does</th></tr><tr><td>Identity and access</td><td>SAML SSO, SCIM and roles</td><td>Members sign in through your identity provider. <a href="https://docs.replit.com/teams/identity-and-access-management/scim">SCIM</a> provisions and deprovisions members, and roles map to identity provider groups. Viewer seats give read-only access to apps and deployments</td></tr><tr><td>Environment isolation</td><td>Private development URLs</td><td>Admins can require that <a href="https://docs.replit.com/teams/privacy-and-deployment-settings">all development URLs require authentication</a>, including SSO when SAML is enabled</td></tr><tr><td>Pre-publish gates</td><td>Require security scan and severity blocking</td><td>Admins can <a href="https://docs.replit.com/teams/enterprise-privacy-settings">require scans for all publishing</a> and set the minimum severity that blocks it. Builders can also run Security Agent from the Publish flow for a deeper review of code, dependency and privacy issues</td></tr><tr><td>Pre-publish gates</td><td>Require Git remote</td><td>Requires all local changes to be pushed before publishing</td></tr><tr><td>Data and secrets</td><td>Private deployments and secret handling</td><td>Admins can make all new published apps private. Credentials are stored as Secrets, separate from the codebase, and injected at runtime</td></tr><tr><td>Data and secrets</td><td>Connector controls</td><td>Enterprise adds <a href="https://docs.replit.com/replitai/managing-connectors">organization-wide connector management</a>, and admins can see which apps and members use which services</td></tr><tr><td>Visibility and audit</td><td>Audit logs and Analytics Dashboard</td><td>The <a href="https://docs.replit.com/teams/identity-and-access-management/audit-logs">Audit Log Portal</a> lets admins view, filter and export events, with streaming to Datadog, Splunk, Amazon S3 or an HTTP endpoint. The Analytics Dashboard shows published apps with public and private breakdowns</td></tr><tr><td>Lifecycle and ownership</td><td>Workspace Security Center and app transfer</td><td>Admins filter vulnerabilities by owner and use Notify owners. Apps can be transferred between team workspaces</td></tr><tr><td>Standardization</td><td>Workspace instructions, skills and design systems</td><td>Shared instructions, reusable skills and approved design systems give every builder the same starting conventions</td></tr></table></div>
+<p>A few limits are worth knowing. The app registry, the reuse check and the 30-day rule for Tier 1 apps are part of your organization's own process, not platform features. The Analytics Dashboard and the Admin API, which pulls workspace, member, project and usage data, can feed them. Replit's own docs note that a clean scan doesn't guarantee an app is secure, so Tier 3 apps still need human review. Bring Your Own Cloud options are in private preview or early access.</p>
+<p>To see how these settings fit together, read <a href="https://replit.com/blog/new-enterprise-governance-tools">Govern Replit at scale</a> or <a href="https://replit.com/enterprise">contact the Replit enterprise team</a>.</p>
+  <h2>Frequently asked questions</h2>
+  <details class="rb-faq"><summary>How do you find vibe-coded apps that are already running?</summary><p>Start with what your platforms already record: published apps, their creators and whether each one is public. Audit logs and expense reports for AI tool subscriptions show where building happens outside approved tools. Then open a short registration form and tell builders that registering gets them support.</p></details><details class="rb-faq"><summary>Do builders need security training to vibe code safely?</summary><p>A short orientation on which data they can use and how the tiers work covers most builders. The heavy lifting belongs in the platform: required sign-in, private publishing by default and scans that block risky apps. Save deeper training for owners of Tier 3 apps.</p></details><details class="rb-faq"><summary>How long does a vibe coding governance rollout take?</summary><p>The plan in this guide takes 90 days. Visibility and registration come first, a tiered policy follows in the second month, and platform enforcement starts in the third. If you already have one sanctioned platform tied to your identity provider, you can start the third phase sooner.</p></details><details class="rb-faq"><summary>Should you ban vibe coding?</summary><p>Bans tend to push building onto personal accounts and unapproved tools, where IT has no visibility at all. A sanctioned platform with clear tiers gives builders an approved path. Restrict specific risks instead, like public publishing or connections to regulated data.</p></details><details class="rb-faq"><summary>Who owns a vibe-coded app?</summary><p>A named app owner is accountable for each app, even when someone else built it. For team tools, the owner should be a manager who will stay with the team. When an owner leaves, ownership moves to their team, and the app is reviewed or retired.</p></details><details class="rb-faq"><summary>Is vibe coding compatible with SOC 2 and GDPR?</summary><p>Yes, if vibe-coded apps fall under the same controls as your other systems: access control, audit trails, change tracking and data mapping. The obligations follow the data, so an app that handles personal data needs the same records as any other. Replit has achieved a SOC 2 Type 2 attestation for its own platform. Each app built on it still needs its own controls.</p></details>
+  <div class="section-tag tag-same">Template</div>
+  <p class="rb-follow">Follow @Replit</p>
+  <h2>More</h2>
+  <div class="rb-more"><div class="placeholder placeholder-img">[Related post card]</div><div class="placeholder placeholder-img">[Related post card]</div><div class="placeholder placeholder-img">[Related post card]</div></div>
+</article>
+</div>
+</div>
+<!-- TAB2_END -->
+</div>
+
+<div id="tab3" class="tab-panel">
+<!-- TAB3_START -->
+<div class="deck" id="deck3">
+<section class="slide cover"><div class="slide-inner">
+<div class="eyebrow">Research &amp; Analysis</div>
+<h1>Governing vibe coding at scale</h1>
+<p class="sub">A new Replit blog guide for IT, security and platform leaders</p>
+<div class="cover-meta"><div><strong>Primary keyword</strong> vibe coding governance</div><div><strong>Proposed URL</strong> /blog/governing-vibe-coding</div><div><strong>Date</strong> November 2, 2026</div></div>
+<span class="priority-pill priority-opp">New page &middot; P2</span>
+</div><div class="slide-num">01</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Top organic results for vibe coding governance (US)</div>
+<h2>Blog posts and research notes hold page one</h2>
+<p class="lead">Seven of the nine organic results are articles: a research note, vendor blogs and an opinion piece. The page type is a long-form blog guide. No replit.com URL ranks for the keyword today, and the closest Replit post, "Govern Replit at scale," is a product announcement. The new guide links to it.</p>
+<table class="data-table"><tr><th>Position</th><th>Domain</th><th>Title</th><th>Page type</th><th>DR</th></tr><tr><td>2</td><td>labs.cloudsecurityalliance.org</td><td>The Vibe Coding Governance Gap</td><td>Research note</td><td>86</td></tr><tr><td>3</td><td>vybe.build</td><td>Enterprise Vibe Coding: Why Governance Is the Real Product</td><td>Vendor blog</td><td>54</td></tr><tr><td>4</td><td>dataiku.com</td><td>Enterprise vibe coding has an AI governance problem</td><td>Vendor blog</td><td>78</td></tr><tr><td>5</td><td>iapp.org</td><td>Vibe coding: Don&#x27;t kill the vibe, govern it</td><td>Opinion article</td><td>88</td></tr><tr><td>6</td><td>linkedin.com</td><td>Vibe Coding Is Dead And Boring Governance Is the Path</td><td>Social post</td><td>99</td></tr><tr><td>7</td><td>caspio.com</td><td>Vibe Coding Governance: The IT Leader&#x27;s 2026 Checklist</td><td>Vendor blog</td><td>80</td></tr><tr><td>8</td><td>edrandall.uk</td><td>Beyond Vibe Coding: Building AI-Assisted Development</td><td>Personal blog</td><td>0</td></tr><tr><td>9</td><td>portainer.io</td><td>Enterprise Vibe Coding: Best Practices &amp; Key Considerations</td><td>Vendor blog</td><td>77</td></tr><tr><td>10</td><td>papers.ssrn.com</td><td>How AI Is Rewriting the Rules of Power</td><td>Paper</td><td>91</td></tr></table>
+</div><div class="slide-num">02</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">SERP features</div>
+<h2>An AI Overview built from nine sources</h2>
+<table class="data-table"><tr><th>Feature</th><th>Status</th></tr><tr><td>AI Overview</td><td>Shown, citing the CSA note, Dataiku, Vybe, Caspio, Portainer, a personal blog and three YouTube videos</td></tr><tr><td>Video results</td><td>Shown inside the AI Overview</td></tr><tr><td>Replit in the AI Overview</td><td>Not cited</td></tr></table>
+<p class="lead">The AI Overview pulls short, self-contained answers. Every H2 in the draft opens with a sentence that stands on its own, and the three priority questions get 40 to 60 word answers: how to govern vibe coding, how to prevent duplicate apps and which checks to run before publishing.</p>
+</div><div class="slide-num">03</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Template evidence</div>
+<h2>The page uses the existing Replit blog post template</h2>
+<p class="lead">Based on <a href="https://replit.com/blog/new-enterprise-governance-tools">Govern Replit at scale</a>, <a href="https://replit.com/blog/16-ways-to-vibe-code-securely">Secure Vibe Coding</a> and <a href="https://replit.com/blog/what-is-vibe-coding">What Is Vibe Coding?</a>. Each is a single-column post with tables, links in the body and an FAQ where one is needed.</p>
+<div class="twocol">
+<div class="card client"><h3>Structure followed</h3><ul><li>Left-aligned H1, Published and Updated dates, The Replit Team byline</li><li>Cover image, then H2 sections with H3 subsections</li><li>Inline tables and links, as in the sibling posts</li><li>FAQ with questions as subheadings, as on What Is Vibe Coding?</li><li>Follow @Replit and the More rail of related posts</li></ul></div>
+<div class="card"><h3>Schema on siblings</h3><p>BlogPosting and BreadcrumbList, kept as is. FAQPage is added to match the visible FAQ.</p></div>
+</div>
+</div><div class="slide-num">04</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Competitor section matrix</div>
+<h2>What five top-ranking pages cover</h2>
+<div class="tbl-scroll"><table class="data-table"><tr><th>Topic</th><th>CSA</th><th>Vybe</th><th>Dataiku</th><th>IAPP</th><th>Portainer</th><th>This draft</th></tr><tr><td>Definition up front</td><td>Partly</td><td>No</td><td>Partly</td><td>No</td><td>Yes</td><td>Yes, under 60 words</td></tr><tr><td>Breach and secrets data</td><td>Yes</td><td>Partly</td><td>Partly</td><td>No</td><td>Partly</td><td>Yes, primary sources</td></tr><tr><td>Shadow IT and inventory</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Partly</td><td>Yes</td><td>Yes</td></tr><tr><td>Duplicate apps and sprawl</td><td>No</td><td>Partly</td><td>No</td><td>No</td><td>No</td><td>Yes, own section</td></tr><tr><td>Compliance and EU AI Act</td><td>Yes</td><td>No</td><td>No</td><td>Partly</td><td>No</td><td>Yes, current dates</td></tr><tr><td>Risk tiers</td><td>Partly</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes, table</td></tr><tr><td>Control layers</td><td>Partly</td><td>Yes</td><td>Partly</td><td>No</td><td>Yes</td><td>Yes, six layers</td></tr><tr><td>Pre-publish checklist</td><td>No</td><td>Partly</td><td>No</td><td>No</td><td>Yes</td><td>Yes, nine checks</td></tr><tr><td>Roles and RACI</td><td>No</td><td>Partly</td><td>No</td><td>Partly</td><td>No</td><td>Yes, table</td></tr><tr><td>Rollout plan</td><td>Partly</td><td>No</td><td>Partly</td><td>No</td><td>No</td><td>Yes, 30/60/90</td></tr><tr><td>FAQ</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes</td><td>Yes, six questions</td></tr></table></div>
+<p class="lead">The CSA note diagnoses the problem well and leaves the operating model thin. Vendor posts list pillars without tiers, owners or a timeline. The draft adds the tier table, a duplicate-apps process, a RACI and a 30/60/90-day plan. The Caspio checklist page returned a server error when checked, so Portainer fills the fifth column.</p>
+</div><div class="slide-num">05</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Keyword benchmark</div>
+<h2>34 of 40 Clearscope terms land in range</h2>
+<div class="kpi-strip"><div class="kpi"><div class="n">34/40</div><div class="l">Terms in range</div></div><div class="kpi"><div class="n">20</div><div class="l">Vibe coding mentions (target 9 to 27)</div></div><div class="kpi"><div class="n">3510</div><div class="l">Words</div></div></div>
+<p class="lead">Five terms are other vendors' product names (bolt, cursor, github copilot, lovable, superblocks). The post leaves them out so it describes the category without naming other platforms. "Replit" sits above its range because the post includes a section on Replit's own controls. Governance terms are capped at 10, so the copy uses "controls" and "policy" where it can.</p>
+</div><div class="slide-num">06</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Schema audit</div>
+<h2>Structured data for the new page</h2>
+<div class="twocol">
+<div class="card"><h3>Keep</h3><p>BlogPosting and BreadcrumbList, which Replit blog posts already carry.</p></div>
+<div class="card client"><h3>Add</h3><p>FAQPage with the six visible questions. Its answers match the on-page text word for word.</p></div>
+</div>
+</div><div class="slide-num">07</div></section>
+
+<section class="slide"><div class="slide-inner">
+<div class="eyebrow">Grounding &amp; accuracy</div>
+<h2>Every fact traces back to its own source</h2>
+<div class="kpi-strip"><div class="kpi"><div class="n">43</div><div class="l">Claims verified with a matching quote</div></div><div class="kpi"><div class="n">32</div><div class="l">From replit.com and docs.replit.com</div></div><div class="kpi"><div class="n">11</div><div class="l">From IBM, GitGuardian, CSA and the European Commission</div></div><div class="kpi"><div class="n">0</div><div class="l">Items needing input</div></div></div>
+<table class="data-table"><tr><th>Source point</th><th>How the draft handles it</th></tr>
+<tr><td>EU AI Act high-risk date</td><td>The Digital Omnibus on AI moved Annex III rules from August 2, 2026 to December 2, 2027. The draft uses the current date from the European Commission timeline.</td></tr>
+<tr><td>Secret handling</td><td>The draft says credentials are stored as Secrets, separate from the codebase, and injected at runtime. Replit's security page says credentials are "injected via a transparent sidecar proxy at runtime."</td></tr>
+<tr><td>Security scan scope</td><td>Replit docs describe scans of code, dependencies and privacy issues. The draft uses that wording and does not claim the scan detects exposed secrets.</td></tr>
+<tr><td>Audit Log Portal, connector controls</td><td>Confirmed in Replit docs and included.</td></tr>
+<tr><td>VPC peering, app catalog</td><td>Not found in current Replit docs, so they are left out. The duplicate-apps section relies on process steps plus the Analytics Dashboard and Admin API.</td></tr></table>
+</div><div class="slide-num">08</div></section>
+
+<section class="slide close-slide"><div class="slide-inner">
+<div class="eyebrow">Citability &amp; takeaway</div>
+<h1>Ready for review</h1>
+<table class="data-table"><tr><th>Citability signal</th><th>Status</th></tr><tr><td>Every H2 opens with a self-contained answer</td><td>Yes</td></tr><tr><td>40 to 60 word answers to the three priority questions</td><td>Yes</td></tr><tr><td>Tiers, controls and RACI in tables</td><td>Yes</td></tr><tr><td>Figures linked to primary sources</td><td>Yes</td></tr><tr><td>Question-led FAQ with matching schema</td><td>Yes, six questions</td></tr><tr><td>Original data or first-party research</td><td>No</td></tr><tr><td>Score</td><td>5 of 6</td></tr></table>
+<p class="sub">Approve or reject each section on the Content Draft tab. Once approved, the guide can go live at /blog/governing-vibe-coding with the schema shown.</p>
+</div><div class="slide-num">09</div></section>
+</div>
+<nav class="dots" id="dots3"></nav>
+<!-- TAB3_END -->
+</div>
+
+<script>
+function switchTab(id, el) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(a => { a.classList.remove('active'); a.classList.remove('inactive'); });
+  var panel = document.getElementById(id);
+  if (panel) panel.classList.add('active');
+  if (el) el.classList.add('active');
+}
+(function() {
+  var deck = document.getElementById('deck3');
+  if (!deck) return;
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var dotsWrap = document.getElementById('dots3');
+  if (!dotsWrap || !slides.length) return;
+  slides.forEach(function(s, i) {
+    var a = document.createElement('a');
+    a.href = '#';
+    if (i === 0) a.className = 'active';
+    a.onclick = function(e) { e.preventDefault(); s.scrollIntoView({ behavior: 'smooth' }); };
+    dotsWrap.appendChild(a);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var idx = slides.indexOf(e.target);
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+      }
+    });
+  }, { root: deck, threshold: 0.55 });
+  slides.forEach(function(s) { obs.observe(s); });
+})();
+</script>
+</body>
+</html>
+
+<!-- Approve / Reject review system (review-ui.js). -->
+<script>
+  window.REVIEW_CONFIG = {
+    pageId: 'replit-blog-governing-vibe-coding',
+    firebase: {
+      apiKey: "AIzaSyAAkYPdh9tPXHkn1UBmnGKfVuZYL9yae6w",
+      authDomain: "on-page-optimizations.firebaseapp.com",
+      projectId: "on-page-optimizations",
+      storageBucket: "on-page-optimizations.firebasestorage.app",
+      messagingSenderId: "40690507441",
+      appId: "1:40690507441:web:52a220fe7755cd2cc94c90"
+    }
+  };
+</script>
+<script src="review-ui.js"></script>
